@@ -12,7 +12,7 @@ import wget
 PATH = "C:\Program Files (x86)\Chrome Driver\chromedriver.exe"
 driver = webdriver.Chrome(PATH)
 
-
+#d
 # time.sleep() is used to sleep the system while next webpage's html loads
 def login(username, password):
 
