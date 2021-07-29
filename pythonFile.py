@@ -84,7 +84,7 @@ def follow(webpage,commentInput):
 def downloadImg(webpage):
 
 	driver.get(webpage) #visting the given webpage
-	n_scrolls = 2 # number of scrolls before getting every link on webpage
+	n_scrolls = 1 # number of scrolls before getting every link on webpage
 	# 2 scrolls cover roughly 35 posts
 	#3 scrolls cover roughly 45 posts
 
@@ -104,10 +104,10 @@ def downloadImg(webpage):
 	# for loop to iterate through posts and get post image
 	for a in posts:
 		driver.get(a) # visting post
-		time.sleep(2)
+		#time.sleep(2)
 		img = driver.find_elements_by_tag_name('img') # getting any tag name img
 		img = [i.get_attribute('src') for i in img] # getting the source of img
-		images.append(img[i]) # appending image to list
+		images.append(img[1]) # appending image to list
 
 	# Save to computer
 
@@ -140,7 +140,7 @@ if __name__ == "__main__":
 
 	if user == "1": 
 		username = "harmanjotss27@gmail.com"
-		password = "Singhsekhon1"
+		password = "TEST123"
 	elif user == "2":
 		username = input("Please enter your username")
 		password = input("Please enter your password")
@@ -167,11 +167,11 @@ if __name__ == "__main__":
 		follow(webpage,commentInput)
 	elif action == "2":
 		login(username,password)
-		download(webpage)
+		downloadImg(webpage)
 	elif action == "3":
 		login(username,password)
 		follow(webpage,commentInput)
 		time.sleep(10)
-		download(webpage)
+		downloadImg(webpage)
 	else:
 		print("Incorrect action.")
