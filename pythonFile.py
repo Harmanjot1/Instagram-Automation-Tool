@@ -139,7 +139,7 @@ if __name__ == "__main__":
 	user = input("Press 1 : User pre-defined Username and Password \nPress 2 : Give your own Username and Password \n")
 
 	if user == "1": 
-		username = "harmanjotss27@gmail.com"
+		username = "TEST123@GMAIL.COM"
 		password = "TEST123"
 	elif user == "2":
 		username = input("Please enter your username")
